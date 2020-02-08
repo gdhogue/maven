@@ -18,8 +18,7 @@ public class AppTest {
 		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 		System.setOut(new PrintStream(outContent));
-		App helloWorld = new App();
-		helloWorld.main(null);
+		App.main(null);
 		assertEquals("Hello World!", outContent.toString());
 	}
 }

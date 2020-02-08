@@ -1,7 +1,5 @@
 package dev.hogue.maven;
 
-import java.io.*;
-
 /**
  * Hello world!
  *
@@ -9,8 +7,8 @@ import java.io.*;
 public class App {
 
 	public static void main(String[] args) {
-		String hello_str = "Hello World!";
+		String helloStr = "Hello World!";
 
-		System.out.print(hello_str);
+		System.out.print(helloStr);
 	}
 }
