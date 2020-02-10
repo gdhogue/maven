@@ -18,17 +18,17 @@ public class AppTest {
 //		App helloWorld = new App();
 //		assertTrue(helloWorld.getClass().desiredAssertionStatus());
 //	}
-//
-//	/**
-//	 * Rigorous Test of console output :-)
-//	 */
-//	@Test
-//	public void helloWorldTest() {
-//		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-//		final String[] test = { "One", "Two", "Three", "Four" };
-//
-//		System.setOut(new PrintStream(outContent));
-//		App.main(test);
-//		assertEquals("Hello World!", outContent.toString());
-//	}
+
+	/**
+	 * Rigorous Test of console output :-)
+	 */
+	@Test
+	public void helloWorldTest() {
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final String[] test = { "One", "Two", "Three", "Four" };
+
+		System.setOut(new PrintStream(outContent));
+		App.main(test);
+		assertEquals("Hello World!", outContent.toString());
+	}
 }
