@@ -82,12 +82,17 @@
 						<configuration>
 							<rules>
 								<rule>
-									<element>TEST</element>
+									<element>BUNDLE</element>
 									<limits>
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
 											<minimum>0.9</minimum>
+										</limit>
+										<limit>
+											<counter>CLASS</counter>
+											<value>MISSEDCOUNT</value>
+											<maximum>0</maximum>
 										</limit>
 									</limits>
 								</rule>
