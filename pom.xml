@@ -163,6 +163,18 @@
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
+			<id>nexus-central</id>
+			<name>Nexus Server Releases</name>
+			<url>http://192.168.1.108:8081/repository/maven-central/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+		</pluginRepository>
+		<pluginRepository>
 			<id>nexus-releases</id>
 			<name>Nexus Server Releases</name>
 			<url>http://192.168.1.108:8081/repository/maven-releases/</url>
@@ -188,6 +200,11 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>nexus.central</name>
+			<url>http://192.168.1.108:8081/repository/maven-central/</url>
+		</repository>
 		<repository>
 			<id>releases</id>
 			<name>nexus.release</name>
