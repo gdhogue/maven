@@ -157,8 +157,8 @@
 	<prerequisites></prerequisites>
 	<repositories>
 		<repository>
-			<id>nexus</id>
-			<url>http://192.168.1.108:8081/myserver/repository/maven-public</url>
+			<id>nexus-central</id>
+			<url>http://192.168.1.108:8081/repository/maven-central</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -200,11 +200,6 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>nexus.central</name>
-			<url>http://192.168.1.108:8081/repository/maven-central/</url>
-		</repository>
 		<repository>
 			<id>releases</id>
 			<name>nexus.release</name>
