@@ -5,26 +5,22 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<!-- The Basics -->
 	<groupId>dev.hogue</groupId>
 	<artifactId>maven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<packaging>jar</packaging>
 	<name>maven</name>
 	<url>http://www.hogue.dev/maven</url>
-
+	<organization>
+		<name>Hogue</name>
+		<url>http://hogue.dev/</url>
+	</organization>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<url>http://192.168.1.108:8081/myserver/repository/maven-public</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -40,7 +36,25 @@
 		</dependency>
 	</dependencies>
 
+	<!-- Build Settings -->
 	<build>
+		<directory>${project.basedir}/target</directory>
+		<outputDirectory>${project.build.directory}/classes</outputDirectory>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+		<scriptSourceDirectory>${project.basedir}/scr/main/scripts</scriptSourceDirectory>
+		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>${project.basedir}/src/test/resources</directory>
+			</testResource>
+		</testResources>
 		<plugins>
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -84,7 +98,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>
@@ -130,17 +143,61 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
+	<!-- Environment Settings -->
+	<issueManagement></issueManagement>
 	<ciManagement>
 		<system>Jenkins</system>
 		<url>http://192.168.1.100:8080/</url>
 	</ciManagement>
+	<mailingLists></mailingLists>
 	<scm>
 		<url>http://192.168.1.102:7990/</url>
 	</scm>
-	
-	<organization>
-		<name>Hogue</name>
-		<url>http://hogue.dev/</url>
-	</organization>
+	<prerequisites></prerequisites>
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://192.168.1.108:8081/myserver/repository/maven-public</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus-releases</id>
+			<name>Nexus Server Releases</name>
+			<url>http://192.168.1.108:8081/repository/maven-releases/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+		</pluginRepository>
+		<pluginRepository>
+			<id>nexus-snapshots</id>
+			<name>Nexus Server Snapshots</name>
+			<url>http://192.168.1.108:8081/repository/maven-snapshots/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>nexus.release</name>
+			<url>http://192.168.1.108:8081/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>nexus.snapshots</name>
+			<url>http://192.168.1.108:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<profiles></profiles>
 </project>
