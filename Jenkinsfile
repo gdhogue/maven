@@ -24,7 +24,7 @@ pipeline {
                echo 'test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed'
                sh 'mvn -e -B test'
                //cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/cobertura.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false
-               //jacoco
+               jacoco changeBuildStatus: true, exclusionPattern: 'src/test*', maximumBranchCoverage: '80', maximumClassCoverage: '100', maximumInstructionCoverage: '80', maximumLineCoverage: '80', maximumMethodCoverage: '100', minimumBranchCoverage: '60', minimumClassCoverage: '80', minimumInstructionCoverage: '60', minimumLineCoverage: '60', minimumMethodCoverage: '80', sourceExclusionPattern: '**/src/test/java'
            }
         }
         stage('Maven Package') {
