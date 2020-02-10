@@ -46,7 +46,7 @@ pipeline {
         stage('Maven Deploy') {
            steps {
                echo 'done in the build environment, copies the final package to the remote repository for sharing with other developers and projects'
-               sh 'mvn -B -e clean deploy'
+               sh 'mvn -B -e -X clean deploy'
            }
         }
     }
