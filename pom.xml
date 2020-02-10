@@ -201,13 +201,13 @@
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
-			<name>nexus.release</name>
+			<id>nexus-releases</id>
+			<name>Release repo for Nexus</name>
 			<url>http://192.168.1.108:8081/repository/maven-releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>nexus.snapshots</name>
+			<id>nexus-snapshots</id>
+			<name>Snapshot repo for Nexus</name>
 			<url>http://192.168.1.108:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
