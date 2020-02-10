@@ -13,11 +13,11 @@ import org.junit.Test;
  */
 public class AppTest {
 	// Test for object creation (also maximize test coverage)
-//	@Test
-//	public void objectCreationTest() {
-//		App helloWorld = new App();
-//		assertTrue(helloWorld.getClass().desiredAssertionStatus());
-//	}
+	@Test
+	public void objectCreationTest() {
+		App helloWorld = new App();
+		assertTrue(helloWorld.getClass().desiredAssertionStatus());
+	}
 
 	/**
 	 * Rigorous Test of console output :-)
