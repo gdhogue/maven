@@ -10,14 +10,20 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>maven</name>
-	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
+	<url>http://www.hogue.dev/maven</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://192.168.1.108:8081/myserver/repository/maven-public</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -124,4 +130,17 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://192.168.1.100:8080/</url>
+	</ciManagement>
+	<scm>
+		<url>http://192.168.1.102:7990/</url>
+	</scm>
+	
+	<organization>
+		<name>Hogue</name>
+		<url>http://hogue.dev/</url>
+	</organization>
 </project>
